@@ -26,7 +26,7 @@ chmod 777 conf data
 docker run -ti --rm \
     -v $(pwd)/conf:/conf \
     -v $(pwd)/data:/data \
-    livelace/mattermost-mobile-android-build help
+    ghcr.io/zarenoff/mmab:2.16 help
 ```
 
 **Generate key and keystore (for APK signing):**
@@ -48,7 +48,7 @@ cp google-services.json conf/google-services.json
 docker run -ti --rm \
     -v $(pwd)/conf:/conf \
     -v $(pwd)/data:/data \
-    livelace/mattermost-mobile-android-build init
+    ghcr.io/zarenoff/mmab:2.16 init
 ```
 
 **Edit configuration:**
@@ -64,7 +64,7 @@ vim conf/build.conf
 docker run -ti --rm \
     -v $(pwd)/conf:/conf \
     -v $(pwd)/data:/data \
-    livelace/mattermost-mobile-android-build build
+    ghcr.io/zarenoff/mmab:2.16 build
 ```
 
 **Install application:**
@@ -79,6 +79,6 @@ adb install data/<BRANCH_TO_BUILD>/mattermost-mobile/<APP_NAME>.apk
 docker run -ti --rm \
     -v $(pwd)/conf:/conf \
     -v $(pwd)/data:/data \
-    livelace/mattermost-mobile-android-build clean
+    ghcr.io/zarenoff/mmab:2.16 clean
 ```
 
