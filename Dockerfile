@@ -23,8 +23,8 @@ RUN             mkdir -p "/usr/share/man/man1" && \
                 usbutils \
                 vim
 
-RUN 			curl -fsSLO https://nodejs.org/dist/v18.10.0/node-v18.10.0-linux-x64.tar.xz && \
-				tar -xJf node-v18.10.0-linux-x64.tar.xz -C /usr/local --strip-components=1 && \
+RUN 			curl -fsSLO https://nodejs.org/dist/v18.17.0/node-v18.17.0-linux-x64.tar.xz && \
+				tar -xJf node-v18.17.0-linux-x64.tar.xz -C /usr/local --strip-components=1 && \
 				rm node-v18.10.0-linux-x64.tar.xz && \
 				npm install -g npm@9.0.0
 
