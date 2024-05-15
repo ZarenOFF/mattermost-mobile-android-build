@@ -36,4 +36,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ghcr.io/${{ github.repository_owner }}/mmamb:${{ env.BRANCH_NAME }}
+        tags: ghcr.io/${{ github.repository_owner }}/mmab:${{ env.BRANCH_NAME }}
