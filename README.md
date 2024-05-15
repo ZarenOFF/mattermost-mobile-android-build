@@ -1,4 +1,11 @@
-### WARNING: Compatible 2.7+
+### This project is a fork of [mattermost-mobile-android-build](https://github.com/livelace/mattermost-mobile-android-build), which has been updated for the latest version of Mattermost.
+
+## Versions:
+
+| Mattermost Mobile version | Branch                                                                        |
+|---------------------------|-------------------------------------------------------------------------------|
+| 2.16                      | [Link](https://github.com/ZarenOFF/mattermost-mobile-android-build/tree/2.16) |
+| 1.55 (original)           | [Link](https://github.com/ZarenOFF/mattermost-mobile-android-build/tree/1.55) |
 
 ## Description:
 

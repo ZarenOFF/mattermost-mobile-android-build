@@ -23,11 +23,10 @@ RUN             mkdir -p "/usr/share/man/man1" && \
                 usbutils \
                 vim
 
-RUN             echo "deb https://deb.nodesource.com/node_20.x bookworm main" > "/etc/apt/sources.list.d/nodesource.list" && \
-                echo "deb-src https://deb.nodesource.com/node_20.x bookworm main" >> "/etc/apt/sources.list.d/nodesource.list" && \
-                curl -sSL "https://deb.nodesource.com/gpgkey/nodesource.gpg.key" | apt-key add - && \
-                apt-get update && \
-                apt-get install -y nodejs
+RUN 			curl -fsSLO https://nodejs.org/dist/v18.10.0/node-v18.10.0-linux-x64.tar.xz && \
+				tar -xJf node-v18.10.0-linux-x64.tar.xz -C /usr/local --strip-components=1 && \
+				rm node-v18.10.0-linux-x64.tar.xz && \
+				npm install -g npm@9.0.0
 
 RUN             npm -g install react-native-cli
 
