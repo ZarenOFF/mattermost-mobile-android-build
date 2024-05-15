@@ -29,5 +29,13 @@ jobs:
       - name: Extract branch name and convert to lowercase
         shell: bash
         run: |
-          echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | sed 's/[^a-zA-Z0-9._-]/-/g' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
-          echo "REPOSITORY_OWNER=$(echo ${{ github.repository_owner }} | tr '[:upper:]'
+          BRANCH_NAME=$(echo "${GITHUB_REF#refs/heads/}" | sed 's/[^a-zA-Z0-9._-]/-/g' | tr '[:upper:]' '[:lower:]')
+          echo "BRANCH_NAME=${BRANCH_NAME}" >> $GITHUB_ENV
+
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ghcr.io/${{ env.REPOSITORY_OWNER }}/mmamb:${{ env.BRANCH_NAME }}
